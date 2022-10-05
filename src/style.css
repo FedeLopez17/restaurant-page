@@ -1,0 +1,456 @@
+:root{
+    --color-uruguay: rgb(106 171 230);
+    --scrollbar-width: 40px;
+    font-size: 16px;
+}
+
+html, body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    scrollbar-width: auto;
+    scrollbar-color: rgb(214, 41, 41);
+    scrollbar-track-color: black;
+}
+
+html::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: black;
+}
+
+html::-webkit-scrollbar{
+	width: 12px;
+	background-color: black;
+}
+
+html::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgb(214, 41, 41);
+}
+
+/* HEADER */
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    background-color: black;
+    color: white;
+    margin-bottom: 30px;
+}
+
+ul{
+    list-style-type: none;
+    margin-block: initial;
+    margin-inline: initial;
+    padding-inline: initial;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    font-size: 1.2rem;
+}
+
+li{
+    cursor: pointer;
+    width: 12ch;
+    padding: 10px 0;
+    text-align: center;
+}
+
+li:hover{
+    transform: scale(1.1);
+    transform: translateY(-2px);
+}
+
+li.current-page{
+    border-bottom: solid 4px white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 0 red;
+}
+
+header > .lower{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 46px);
+}
+
+header .logo{
+    width: 300px;
+}
+
+header::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 60px;
+    width: 100%;
+    left: 0;
+    background: url("./images/ripped-paper-effects/ripped-paper-black.svg") bottom;
+    background-size: 101%;
+    filter: drop-shadow(0 8px 0 white) drop-shadow(0 8px 6px black);
+}
+/* MAIN */
+main{
+    background-image: url("./images/meat-seamless-background.svg");
+    background-repeat: repeat;
+    background-size: 300px;
+}
+
+/* FOOTER */
+footer{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+
+footer > .upper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+footer .fa-heart{
+    color: red;
+    cursor: pointer;
+}
+
+footer > .lower{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .left{
+    width: min(200px, 40%);
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    margin-left: 2%;
+    overflow-x: scroll;
+    scrollbar-color: var(--color-uruguay);
+}
+
+footer .left img{
+    height: 60px;
+    transition: filter 0.1s;
+    filter: brightness(0.5);
+}
+
+footer .left img:hover{
+    filter: drop-shadow(-2px 0px 0 var(--color-uruguay)) drop-shadow(2px 0px 0 var(--color-uruguay));
+}
+
+footer .left::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+}
+
+footer .left::-webkit-scrollbar{
+	height: 10px;
+}
+
+footer .left::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: var(--color-uruguay);
+}
+
+footer .right{
+    margin-right: 2%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 4%;
+}
+
+footer .right img{
+    height: 40px;
+}
+
+.uruguay-flag-container{
+    position: relative;
+}
+
+.flag-of-uruguay{
+    filter: brightness(0.8);
+    cursor: pointer;
+}
+
+.flag-of-uruguay:hover{
+    filter: brightness(1);
+}
+
+.stars{
+    position: absolute;
+    left: 0;
+    top: -25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+
+.flag-of-uruguay:hover + .stars {
+    top: -40px;
+    opacity: 1;
+}
+
+.github-logo{
+    filter: brightness(0.5);
+}
+
+.github-logo:hover{
+    filter: brightness(1);
+}
+
+/* HOME PAGE */
+
+.home-page{
+    height: 100%;
+}
+
+.home-page .slideshow{
+    margin-top: -30px;
+    aspect-ratio: 3/1;
+    background-image: url("./images/dishes-sprite.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: slideshow 30s linear infinite;
+}
+
+@keyframes slideshow {
+    0%, 7% {background-position-x: 0%}
+    9%, 16% {background-position-x: 10%}
+    18%, 25% {background-position-x: 20%}
+    27%, 34% {background-position-x: 30%}
+    36%, 43% {background-position-x: 40%}
+    45%, 52% {background-position-x: 50%}
+    54%, 61% {background-position-x: 60%}
+    63%, 70% {background-position-x: 70%}
+    72%, 79%  {background-position-x: 80%}
+    81%, 88% {background-position-x: 90%}
+    90%, 98% {background-position-x: 100%}
+    100% {background-position-x: 0%;}
+}
+
+.description img{
+    width: 100%;
+    filter: drop-shadow(0px 4px 4px grey);
+}
+
+.description article{
+    text-align: justify;
+    margin: 8% auto 0;
+    width: min(60%, 1200px);
+    padding: 2%;
+    backdrop-filter: blur(1px);
+    border-radius: 16px;
+}
+
+.description h2{
+    font-size: 3rem;
+    color: darkred;
+    text-align: left;
+    border-bottom: solid 4px;
+}
+
+.map-container{
+    display: flex;
+    justify-content: center;
+    padding: 10% 0 5%;
+}
+
+.map-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    width: min(60%, 1200px);
+    padding: 0 0.5% 0.5%;
+    filter: drop-shadow(0px 5px 8px grey);
+}
+
+.text-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media(max-width: 700px){
+    .text-container{
+        display: none;
+    }
+
+    .map-wrapper{
+        padding-top: 0.5%;
+    }
+}
+
+.map-container img{
+    aspect-ratio: 16/9;
+    width: 100%
+}
+
+/* MENU PAGE */
+
+.menu-page{
+    margin-top: 60px;
+}
+
+.menu-page article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    backdrop-filter: blur(1px);
+}
+
+.menu-page article:last-child{
+    padding-bottom: 80px;
+}
+
+.menu-page article h2{
+    border-bottom: solid 2px;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.menu-page .dish-container{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-page .dish-container:hover{
+    background-color: rgba(200, 0, 0, 0.1);
+    box-shadow: 0px 2px 0px 0px rgba(139, 0, 0, 0.5);
+}
+
+.menu-page .dish-name{
+    margin-left: 10px;
+}
+
+.menu-page .dish-price{
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+/* RESERVATIONS PAGE */
+
+.reservations-page{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.reservation-container{
+    margin-top: 150px;
+    display: flex;
+    width: min(90%, 1200px);
+    box-shadow: -6px 6px 10px 0px darkgrey;
+}
+
+.reservation-container img{
+    width: 50%;
+}
+
+.reservation-button-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(139, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+}
+
+.reservation-button-container p{
+    margin-top: 30%;
+}
+
+.reservation-button-container button{
+    background-color: black;
+    color: white;
+    font-weight: 900;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.reservation-button-container button:hover{
+    background-color: darkred;
+}
+
+/* BACK TO TOP BUTTON */
+
+.back-to-top-button{
+    position: fixed;
+    z-index: 1;
+    bottom: 90px;
+    right: 10px;
+    font-size: 3rem;
+    color: rgb(139, 0, 0);
+    filter: drop-shadow(3px 4px 1px black);
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 1s;
+}
+
+.back-to-top-button:hover{
+    color: rgb(200, 0, 0);
+}
+
+.back-to-top-button.show{
+    opacity: 1;
+}
+
+@media (orientation: portrait), (max-width: 450px){
+    
+    :root{
+        font-size: 12px;
+    }
+
+    .home-page .slideshow{
+        display: none;
+    }
+
+    .home-page .local-produce{
+        margin-top: 60px;
+    }
+
+    .home-page .description h2{
+        font-size: 2rem;
+    }
+
+    .menu-page article h2{
+        font-size: 1.2rem;
+        width: 80%;
+    }
+
+    .menu-page .dish-container{
+        width: 80%;
+    }
+
+    .reservations-page .reservation-button-container button{
+        padding: 10px;
+    }
+
+    .back-to-top-button{
+        color: rgba(139, 0, 0, 0.5);
+    }
+}
