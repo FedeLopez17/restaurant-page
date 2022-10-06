@@ -3,6 +3,10 @@ export default function appendBackToTopButton(container){
     backToTopButton.classList.add("back-to-top-button", "fa-regular", "fa-square-caret-up");
     backToTopButton.title = "BACK TO TOP";
 
+    backToTopButton.addEventListener("click", ()=>{
+        window.scrollTo(0, 0);
+    });
+
     window.addEventListener("scroll", showBackToTopButton);
 
     function showBackToTopButton(){
