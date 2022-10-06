@@ -30,7 +30,7 @@
 ## Description: 
 This restaurant page project is part of [The Odin Project's curriculum](https://www.theodinproject.com/paths).<br>
 Throughout this project I learned how to dynamically render HTML as well as how to use Webpack and ES6 Modules.<br>
-I had a blast with this project. Plus, apart from the aforementioned intentions behind the project, I feel like building it has made me realize what I need to study further and which topics I need to revisit. 
+I had a blast with this project. Plus, apart from the aforementioned intentions behind the project, building it has made me realize what I need to study further and which topics I need to revisit. :D
 
 ## Technologies used:
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
